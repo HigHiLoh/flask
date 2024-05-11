@@ -31,10 +31,10 @@ def get_naver_search_results(query, client_id, client_secret, start=1, display=2
         print("Error:", e)
         return None
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
-    if request.method == 'POST':
-        query = request.form['query']
+    query = request.args.get('query')
+    if query:
         client_id = "a5uQFjClEURaL3o6JbbT"  # 네이버 API의 클라이언트 ID
         client_secret = "1Inp0lfzmQ"  # 네이버 API의 클라이언트 시크릿
         start_page = 1
