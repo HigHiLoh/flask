@@ -54,9 +54,9 @@ def index():
                     'link': link,
                     'http_status': http_status
                 })
-            return render_template('index.html', query=query, results=results)
+            return render_template('./index.html', query=query, results=results)
     else:
-        return render_template('index.html')
+        return render_template('./index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
